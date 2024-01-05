@@ -12,19 +12,32 @@ class Solution{
     public:
     // Function to check if given number n is a power of two.
     
-    bool isPowerofTwo(long long n){
+    // bool isPowerofTwo(long long n){
         
-        // Your code here 
-        if (n <= 0) {
-            return false; 
-        }
-        while (n > 1) {
-            if (n % 2 != 0) {
-                return false;  
-            }
-            n /= 2;
-        }
-        return true;
+    //     // Your code here 
+    //     if (n <= 0) {
+    //         return false; 
+    //     }
+    //     while (n > 1) {
+    //         if (n % 2 != 0) {
+    //             return false;  
+    //         }
+    //         n /= 2;
+    //     }
+    //     return true;
+    // }
+    
+    bool check(double long n){
+        
+        if(n == 1) return true;
+        
+        if(n<2) return false;
+        
+        return check(n/2);
+    }
+    
+    bool isPowerofTwo(long long n){
+        return check(n);
     }
 };
 
